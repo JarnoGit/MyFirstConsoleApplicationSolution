@@ -15,7 +15,7 @@ namespace MyFirstConsoleApplication.Grid
          int height = 10;
 
          // Why does this code not work?
-         //int[][] grid = new int[width][height];
+         int[][] grid = new int [width][height];
 
       }
 

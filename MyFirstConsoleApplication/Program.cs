@@ -7,12 +7,16 @@ namespace MyFirstConsoleApplication
    {
       static void Main(string[] args)
       {
+
+         DateTime curTime = DateTime.Now;
+         Console.WriteLine(curTime);
+         
          // Grids         
          //Grids.CreateGrid();
          //Grids.AnotherGrid();
 
          // Classes and inherritance
-         Console.WriteLine("This is my dog");
+         Console.WriteLine("This is my doggie");
          Dog doggie = new Dog("Doggy", 4, 0.4f, DogBreed.Boxer);
          doggie.Print();
          doggie.Bark();
