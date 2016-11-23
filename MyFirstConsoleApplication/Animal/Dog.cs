@@ -2,11 +2,11 @@
 
 namespace MyFirstConsoleApplication.Animal
 {
-   enum DogBreed { Bulldog, Boxer, Briard }
+   public enum DogBreed { Bulldog, Boxer, Briard }
    
-   class Dog : Animal
+   public class Dog : Animal
    {
-      public int spotCount;
+      private int spotCount;
    
       public Dog (string _name, int _age, float _happiness, DogBreed _dogBreed)
       {

@@ -2,15 +2,15 @@
 
 namespace MyFirstConsoleApplication.Animal
 {
-   class Animal
+   public class Animal
    {
-      public static int count = 0;
+      private static int count = 0;
       public string name;
       public int age;
       public float happiness;
       public string breed;
 
-      public Animal ()
+      protected Animal ()
       {
          count++;
       }

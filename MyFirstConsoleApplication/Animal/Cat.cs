@@ -2,11 +2,11 @@
 
 namespace MyFirstConsoleApplication.Animal
 {
-   enum CatBreed { Siamese, Shorthair, Pers }
+   public enum CatBreed { Siamese, Shorthair, Pers }
 
-   class Cat : Animal
+   public class Cat : Animal
    {
-      public float cuteness;
+      private float cuteness;
 
       public Cat(string _name, int _age, float _happiness, CatBreed _catBreed)
       {
@@ -17,7 +17,7 @@ namespace MyFirstConsoleApplication.Animal
       }
 
 
-      public void meow()
+      public void Meow()
       {
          Console.WriteLine("MEOW");
       }
