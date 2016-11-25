@@ -10,9 +10,22 @@ namespace MyFirstConsoleApplication.Animal
       public float happiness;
       public string breed;
 
-      protected Animal ()
+        public static int Count
+        {
+            get
+            {
+                return count;
+            }
+
+            set
+            {
+                count = value;
+            }
+        }
+
+        protected Animal ()
       {
-         count++;
+         Count++;
       }
 
       public void Print()
@@ -21,7 +34,7 @@ namespace MyFirstConsoleApplication.Animal
          Console.WriteLine("Age: " + age);
          Console.WriteLine("Happpiness: " + happiness);
          Console.WriteLine("Breed: " + breed);
-         Console.WriteLine("Number of Animals: " + count);
+         Console.WriteLine("Number of Animals: " + Count);
       }
    }
 }
