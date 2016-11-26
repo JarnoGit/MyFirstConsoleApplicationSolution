@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstConsoleApplication",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstConsoleApplicationIT", "MyFirstConsoleApplicationIT\MyFirstConsoleApplicationIT.csproj", "{C63A0813-6A2F-405B-9A10-180B58C491C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstConsoleApplicationTest", "MyFirstConsoleApplicationTest\MyFirstConsoleApplicationTest.csproj", "{D989088E-2D01-4FC6-8E21-6DE701EBE659}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6FBBC572-0F1B-4C73-AE3E-BE889AE5BBB2} = {6FBBC572-0F1B-4C73-AE3E-BE889AE5BBB2}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{C63A0813-6A2F-405B-9A10-180B58C491C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C63A0813-6A2F-405B-9A10-180B58C491C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C63A0813-6A2F-405B-9A10-180B58C491C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D989088E-2D01-4FC6-8E21-6DE701EBE659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D989088E-2D01-4FC6-8E21-6DE701EBE659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D989088E-2D01-4FC6-8E21-6DE701EBE659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D989088E-2D01-4FC6-8E21-6DE701EBE659}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
