@@ -1,4 +1,4 @@
-Feature: Demo Feature working with Specflow
+﻿Feature: Demo Feature working with Specflow
 
 Scenario: I want a cat
 Given I have 0 pets
