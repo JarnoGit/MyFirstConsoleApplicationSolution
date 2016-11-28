@@ -1,33 +1,67 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MyFirstConsoleApplication.Animal;
+using MyFirstConsoleApplicationSpecFlow.Actions;
+using System;
+using System.Dynamic;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace MyFirstConsoleApplicationSpecFlow.StepDefinitions
 {
     [Binding]
     public class SpecflowSteps
     {
-        [Given(@"I have (.*) pets")]
-        public void GivenIHavePets(int p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
         
-        [When(@"I buy a cat")]
-        public void WhenIBuyACat()
+        [Given(@"I have (.*) pets")]
+        public void GivenIHavePets(int animalCount)
         {
-            ScenarioContext.Current.Pending();
+            Animal.Count = animalCount;
         }
         
         [When(@"I buy a dog")]
-        public void WhenIBuyADog()
+        public void WhenIBuyACat()
         {
-            ScenarioContext.Current.Pending();
+            var dog = new Dog("Doggie", 1, 0.5f, DogBreed.Bulldog);
         }
         
-        [Then(@"the number of pets I have is (.*)")]
-        public void ThenTheNumberOfPetsIHaveIs(int p0)
+        [When(@"I buy a cat")]
+        public void WhenIBuyADog()
         {
+            var cat = new Cat("Spinner", 5, 1.0f, CatBreed.Shorthair);
+        }
+
+        [When(@"I buy (.*) cat and (.*) dog")]
+        public void WhenIBuyCatAndDog(int numberofCatsToBuy, int numberOfDogsToBuy)
+        {
+            for (int cats = 0; cats < numberofCatsToBuy; cats++)
+            {
+                var cat = new Cat("Spinner", 5, 1.0f, CatBreed.Shorthair);
+            }
+            for (int dogs = 0; dogs < numberOfDogsToBuy; dogs++)
+            {
+                var dog = new Dog("Doggie", 1, 0.5f, DogBreed.Bulldog);
+            }
+        }
+
+        [Then(@"the number of pets I have is (.*)")]
+        public void ThenTheNumberOfPetsIHaveIs(int numberOfPets)
+        {
+            Assert.AreEqual(numberOfPets, Animal.Count);
+        }
+
+        [When(@"I buy the following cat")]
+        public void WhenIBuyTheFollowingCat(Table catTable)
+        {
+            dynamic dynamicCatInstance = catTable.CreateDynamicInstance();
+            TestActions.AddCat(dynamicCatInstance);
+        }
+
+        [When(@"I buy the following dog")]
+        public void WhenIBuyTheFollowingDog(Table table)
+        {
+            var _dynamicDog = table.CreateDynamicInstance();
             ScenarioContext.Current.Pending();
         }
+
     }
 }

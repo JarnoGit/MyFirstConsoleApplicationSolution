@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyFirstConsoleApplication.Animal;
 
-namespace MyFirstConsoleApplicationTest
+namespace MyFirstConsoleApplicationTest.UnitTests
 {
     [TestClass]
     public class UnitTests
@@ -24,6 +24,7 @@ namespace MyFirstConsoleApplicationTest
         [TestMethod]
         public void NumberOfPets()
         {
+            Animal.Count = 0;
             var doggie = new Dog("Doggy", 4, 0.4f, DogBreed.Boxer);
             var spotty = new Dog("Spotty", 2, 0.1f, DogBreed.Briard);
             Assert.AreEqual(2, Animal.Count);
