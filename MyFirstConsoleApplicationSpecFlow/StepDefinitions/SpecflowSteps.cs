@@ -53,15 +53,26 @@ namespace MyFirstConsoleApplicationSpecFlow.StepDefinitions
         public void WhenIBuyTheFollowingCat(Table catTable)
         {
             dynamic dynamicCatInstance = catTable.CreateDynamicInstance();
-            TestActions.AddCat(dynamicCatInstance);
+            var cat = TestActions.AddCat(dynamicCatInstance);
+            ScenarioContext.Current.Add("cat", cat);
         }
 
         [When(@"I buy the following dog")]
-        public void WhenIBuyTheFollowingDog(Table table)
+        public void WhenIBuyTheFollowingDog(Table dogTable)
         {
-            var _dynamicDog = table.CreateDynamicInstance();
-            ScenarioContext.Current.Pending();
-        }
+            var dynamicDogInstance = dogTable.CreateDynamicInstance();
+            var dog = TestActions.AddDog(dynamicDogInstance);
+            ScenarioContext.Current.Add("dog", dog);
+      }
 
-    }
+      [Then(@"I should have the following cat")]
+      public void ThenIShouldHaveTheFollowingCat(string multilinePetText)
+      { 
+
+        var cat = ScenarioContext.Current["cat"] as Cat;
+         Assert.AreEqual(multilinePetText, cat.GetMultiLinePetInfo());
+      }
+
+
+   }
 }

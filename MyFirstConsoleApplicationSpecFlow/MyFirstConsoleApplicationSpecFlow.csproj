@@ -79,6 +79,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Features\TestWithMultilineText.feature.cs">
+      <DependentUpon>TestWithMultilineText.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefinitions\SpecflowSteps.cs" />
     <Compile Include="Features\TestWithTables.feature.cs">
@@ -100,6 +105,10 @@
     <None Include="Features\TestOutlines.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TestOutlines.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\TestWithMultilineText.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TestWithMultilineText.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Features\TestWithTables.feature">

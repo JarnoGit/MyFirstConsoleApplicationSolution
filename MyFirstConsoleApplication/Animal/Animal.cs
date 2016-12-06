@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace MyFirstConsoleApplication.Animal
 {
@@ -35,6 +36,19 @@ namespace MyFirstConsoleApplication.Animal
          Console.WriteLine("Happpiness: " + happiness);
          Console.WriteLine("Breed: " + breed);
          Console.WriteLine("Number of Animals: " + Count);
+      }
+
+      public String GetMultiLinePetInfo()
+      {
+         StringBuilder builder = new StringBuilder();
+
+         builder.Append("Name: " + name).Append(Environment.NewLine);
+         builder.Append("Age: " + age).Append(Environment.NewLine);
+         builder.Append("Happiness: " + happiness).Append(Environment.NewLine);
+         builder.Append("Breed: " + breed);
+      
+         String result = builder.ToString();
+         return result;
       }
    }
 }
