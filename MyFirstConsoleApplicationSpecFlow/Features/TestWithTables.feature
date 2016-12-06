@@ -2,7 +2,7 @@
 
 Scenario: I want a cat table
 Given I have 0 pets
-When I buy the following cat
+When I buy the following pet
 | name   | age | happiness | breed   |
 | Fluffy | 4   | 0.3       | Siamese |
 Then the number of pets I have is 1

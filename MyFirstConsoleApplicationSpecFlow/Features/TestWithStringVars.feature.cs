@@ -18,19 +18,19 @@ namespace MyFirstConsoleApplicationSpecFlow.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class WorkingWithMultilineTextFeature
+    public partial class WorkingWithVariablesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "TestWithMultilineText.feature"
+#line 1 "TestWithStringVars.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Working with Multiline Text", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Working with variables", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -45,9 +45,9 @@ namespace MyFirstConsoleApplicationSpecFlow.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Working with Multiline Text")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "Working with variables")))
             {
-                MyFirstConsoleApplicationSpecFlow.Features.WorkingWithMultilineTextFeature.FeatureSetup(null);
+                MyFirstConsoleApplicationSpecFlow.Features.WorkingWithVariablesFeature.FeatureSetup(null);
             }
         }
         
@@ -68,31 +68,21 @@ namespace MyFirstConsoleApplicationSpecFlow.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I want a cat multiline")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Working with Multiline Text")]
-        public virtual void IWantACatMultiline()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("I want a cat var step")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Working with variables")]
+        public virtual void IWantACatVarStep()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I want a cat multiline", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("I want a cat var step", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
 testRunner.Given("I have 0 pets", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "name",
-                        "age",
-                        "happiness",
-                        "breed"});
-            table1.AddRow(new string[] {
-                        "Fluffy",
-                        "4",
-                        "0.3",
-                        "Siamese"});
 #line 5
-testRunner.When("I buy the following pet", ((string)(null)), table1, "When ");
-#line hidden
-#line 8
-testRunner.Then("I should have the following pet", "Name: Fluffy\r\nAge: 4\r\nHappiness: 0.3\r\nBreed: Siamese", ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.When("I buy \'Fluffy\', a \'Siamese\' cat with an age of 4 and happiness 0.3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+testRunner.When("I buy \'Iek\', a \'klotekat\' cat with an age of 4 and happiness 0.3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+testRunner.Then("the number of pets I have is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

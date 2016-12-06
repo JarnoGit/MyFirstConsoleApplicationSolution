@@ -89,7 +89,7 @@ testRunner.Given("I have 0 pets", ((string)(null)), ((TechTalk.SpecFlow.Table)(n
                         "0.3",
                         "Siamese"});
 #line 5
-testRunner.When("I buy the following cat", ((string)(null)), table1, "When ");
+testRunner.When("I buy the following pet", ((string)(null)), table1, "When ");
 #line 8
 testRunner.Then("the number of pets I have is 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

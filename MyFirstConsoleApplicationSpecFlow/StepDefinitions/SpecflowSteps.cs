@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyFirstConsoleApplication.Animal;
+using MyFirstConsoleApplication.Utils;
 using MyFirstConsoleApplicationSpecFlow.Actions;
 using System;
 using System.Dynamic;
@@ -49,12 +50,12 @@ namespace MyFirstConsoleApplicationSpecFlow.StepDefinitions
             Assert.AreEqual(numberOfPets, Animal.Count);
         }
 
-        [When(@"I buy the following cat")]
-        public void WhenIBuyTheFollowingCat(Table catTable)
+        [When(@"I buy the following pet")]
+        public void WhenIBuyTheFollowingPet(Table catTable)
         {
             dynamic dynamicCatInstance = catTable.CreateDynamicInstance();
-            var cat = TestActions.AddCat(dynamicCatInstance);
-            ScenarioContext.Current.Add("cat", cat);
+            var pet = TestActions.AddCat(dynamicCatInstance);
+            ScenarioContext.Current.Add("pet", pet);
         }
 
         [When(@"I buy the following dog")]
@@ -65,14 +66,30 @@ namespace MyFirstConsoleApplicationSpecFlow.StepDefinitions
             ScenarioContext.Current.Add("dog", dog);
       }
 
-      [Then(@"I should have the following cat")]
+      [When(@"I buy '(.*)', a '(.*)' cat with an age of (.*) and happiness (.*)")]
+      public void WhenIBuyACatWithAnAgeOfAndHappiness(string name, string breed, int age, float happiness)
+      {
+         try
+         {
+            CatBreed catBreed = (CatBreed)Enum.Parse(typeof(CatBreed), breed);
+            var cat = new Cat(name, age, happiness, catBreed);
+         }
+         catch (Exception)
+         {
+
+            throw new Exception("Catbreed not found. Catbreeds can be: " + EnumUtil.GetAllValuesAsString<CatBreed>());
+         }
+
+      }
+
+
+      [Then(@"I should have the following pet")]
       public void ThenIShouldHaveTheFollowingCat(string multilinePetText)
       { 
 
-        var cat = ScenarioContext.Current["cat"] as Cat;
-         Assert.AreEqual(multilinePetText, cat.GetMultiLinePetInfo());
+        var pet = ScenarioContext.Current["pet"] as Animal;
+         Assert.AreEqual(multilinePetText, pet.GetMultiLinePetInfo());
       }
-
 
    }
 }
